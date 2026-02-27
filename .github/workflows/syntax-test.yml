@@ -1,0 +1,26 @@
+name: Syntax Error Test
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      
+      - name: Create file with syntax error
+        run: |
+          cat > test_syntax.py << 'EOF'
+          def hello()
+              print("Missing colon on line above!")
+          
+          hello()
+          EOF
+      
+      - name: Run Python file (will fail)
+        run: python test_syntax.py
