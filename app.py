@@ -1,12 +1,11 @@
-def add(a, b)
+def add(a, b)  # Missing colon - syntax error!
     return a + b
-
 
 def greet(name):
     print("Hello, " + name)
 
-
 if __name__ == "__main__":
-    result = add(5, 3)
+    result = add(2, 3)
     print("Result is:", result)
+
 # Testing CI Healer
