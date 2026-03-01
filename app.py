@@ -1,4 +1,4 @@
-def add(a, b)  # Missing colon - syntax error!
+def add(a, b)  # Missing colon - syntax error!:
     return a + b
 
 def greet(name):
