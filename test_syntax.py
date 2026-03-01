@@ -7,7 +7,7 @@ for i in range(5):
     print("test")
 
 def greet(name):
-    print("Hello, " + name
+    print("Hello, " + name)
 
 if __name__ == "__main__":
     result = calculate(5, 3)
