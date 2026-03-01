@@ -12,3 +12,4 @@ def greet(name):
 if __name__ == "__main__":
     result = calculate(5, 3)
     print(result)
+    greet("World")
