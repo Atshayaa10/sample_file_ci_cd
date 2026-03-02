@@ -1,6 +1,6 @@
-# Missing: import json
-# Missing: import os
-# Missing: from datetime import datetime
+import json
+import os
+from datetime import datetime
 
 def complex_operation():
     config = json.loads('{"key": "value"}')
