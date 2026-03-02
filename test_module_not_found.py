@@ -1,10 +1,10 @@
 import requests
-import beautifulsoup4  # Wrong!
+from bs4 import BeautifulSoup
 import numpy as np
 
 def scrape_data():
     response = requests.get('https://example.com')
-    soup = beautifulsoup4.BeautifulSoup(response.text, 'html.parser')
+    soup = BeautifulSoup(response.text, 'html.parser')
     return soup.title.string
 
 if __name__ == "__main__":
