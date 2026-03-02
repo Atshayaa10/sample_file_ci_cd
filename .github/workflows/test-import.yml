@@ -3,24 +3,17 @@ name: Test Missing Import
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      
+      - uses: actions/checkout@v3
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
-      
       - name: Install pandas
         run: pip install pandas
-      
-      - name: Run test file
+      - name: Run test
         run: python test_missing_import.py
