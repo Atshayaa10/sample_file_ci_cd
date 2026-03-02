@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib
 
 def analyze_sales_data():
     data = pd.DataFrame({
