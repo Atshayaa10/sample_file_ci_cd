@@ -1,3 +1,5 @@
+import pandas as pd
+
 def analyze_sales_data():
     data = pd.DataFrame({
         'product': ['Laptop', 'Phone', 'Tablet', 'Monitor'],
