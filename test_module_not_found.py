@@ -1,11 +1,9 @@
-import requests
-from bs4 import BeautifulSoup
-import numpy as np
+import matplotlib.pyplot as plt  # This package is NOT in requirements.txt
 
-def scrape_data():
-    response = requests.get('https://example.com')
-    soup = BeautifulSoup(response.text, 'html.parser')
-    return soup.title.string
+def plot_data():
+    plt.plot([1, 2, 3], [4, 5, 6])
+    plt.savefig('plot.png')
+    print("Done!")
 
 if __name__ == "__main__":
-    print(scrape_data())
+    plot_data()
