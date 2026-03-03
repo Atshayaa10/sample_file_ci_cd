@@ -1,3 +1,4 @@
+# Testing path separator issue
 def read_config():
     # Windows-style path - will fail on Linux CI
     config_file = "data\\config.json"
