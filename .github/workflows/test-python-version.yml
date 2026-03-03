@@ -1,0 +1,27 @@
+name: Test Python Version Mismatch
+
+on:
+  push:
+    paths:
+      - 'test_python_version.py'
+      - '.github/workflows/test-python-version.yml'
+  workflow_dispatch:
+
+jobs:
+  test-python-version:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Set up Python (WRONG VERSION - will fail)
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'  # Too old for match statement
+      
+      - name: Display Python version
+        run: python --version
+      
+      - name: Run test (will fail with SyntaxError)
+        run: python test_python_version.py
