@@ -1,0 +1,35 @@
+name: Test High Risk - Multiple Files
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-high-risk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install requests
+      
+      - name: Run high risk test 1
+        run: python test_high_risk_1.py
+      
+      - name: Run high risk test 2
+        run: python test_high_risk_2.py
+      
+      - name: Run high risk test 3
+        run: python test_high_risk_3.py
+      
+      - name: Run high risk test 4
+        run: python test_high_risk_4.py
