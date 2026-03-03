@@ -1,0 +1,24 @@
+name: Test Path Issue
+
+on:
+  push:
+    paths:
+      - 'test_path_issue.py'
+      - '.github/workflows/test-path-issue.yml'
+  workflow_dispatch:
+
+jobs:
+  test-path:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Run test (will fail due to path separator)
+        run: python test_path_issue.py
