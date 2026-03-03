@@ -1,0 +1,9 @@
+# Config file with syntax error
+database:
+  host: localhost
+  port: 5432
+  name: mydb
+  
+server
+  port: 8000  # Missing colon after 'server'
+  host: 0.0.0.0
