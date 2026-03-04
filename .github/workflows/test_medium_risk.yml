@@ -1,0 +1,23 @@
+name: Test MEDIUM Risk - Config Error
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  test-medium-risk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Run medium risk test 1 (will fail - missing env vars)
+        run: python test_medium_risk_config.py
+      
+      - name: Run medium risk test 2 (will fail - missing env vars)
+        run: python test_medium_risk_helper.py
